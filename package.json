@@ -13,6 +13,7 @@
     "commander": "^2.15.1",
     "minimist": "^1.2.0",
     "xlsx": "^0.13.0",
+    "xlsx-stream-reader": "^0.9.11",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
