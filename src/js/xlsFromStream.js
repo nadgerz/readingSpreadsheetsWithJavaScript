@@ -65,11 +65,13 @@ console.log(argv.file);
 let workbook;
 
 var filestream = fs.createReadStream(argv.file); // a readable stream
+console.log(typeof filestream);
 var buffers = [];
-file.on("data", function(data) {
+filestream.on("data", function(data) {
   buffers.push(data);
+  console.log(data);
 });
-file.on("end", function() {
+filestream.on("end", function() {
   var buffer = Buffer.concat(buffers);
   workbook = XLSX.read(buffer); // works
   console.log(workbook);
