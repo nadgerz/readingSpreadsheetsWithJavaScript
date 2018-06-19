@@ -3,10 +3,17 @@
 #
 #    Run node script and assume spreadsheet of same name.
 #
-fullfilename=${1}
-filename=$(basename "$fullfilename")
+#    Just to make things a bit easier when testing.
+#
+fullFilename=${1}
+
+location=$(dirname "$fullFilename")
+
+filename=$(basename "$fullFilename")
 fname="${filename%.*}"
 ext=${filename##*.}
 
-node ${fullfilename} -f ../../data/${fname}.xls  2>&1 | tee ../../logs/${fname}.log
+cd ${location} || exit 3
+
+node ${filename} -f ../../data/${fname}.xls  2>&1 | tee ../../logs/${fname}.log
 
