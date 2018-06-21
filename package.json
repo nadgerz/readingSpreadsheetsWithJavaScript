@@ -17,6 +17,7 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "memwatch-next": "^0.3.0"
+    "memwatch-next": "^0.3.0",
+    "xlsx-to-json": "^0.3.0"
   }
 }
