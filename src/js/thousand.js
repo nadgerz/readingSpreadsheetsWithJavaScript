@@ -59,7 +59,7 @@ const argv = require("yargs")
 console.log(argv);
 // console.log(argv.f);
 console.log(argv.file);
-var workbook = XLSX.readFile(argv.file);
+var workbook = XLSX.readFile(argv.file, {sheetRows:1000});
 // console.log(workbook);
 const sheetNames = workbook.SheetNames;
 console.log(sheetNames);
