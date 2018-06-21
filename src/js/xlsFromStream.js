@@ -61,10 +61,12 @@ const argv = require("yargs")
 console.log(argv);
 // console.log(argv.f);
 console.log(argv.file);
+console.log(typeof argv.file);
 
 let workbook;
 
 var filestream = fs.createReadStream(argv.file); // a readable stream
+filestream = fs.createReadStream('../../data/example.xls'); // a readable stream
 console.log(typeof filestream);
 var buffers = [];
 filestream.on("data", function(data) {
