@@ -121,6 +121,15 @@ public class ExcelReader {
           System.out.println();
         });
 
+    sheet.forEach(
+        row -> {
+          row.forEach(
+              cell -> {
+                printCellValue(cell);
+              });
+          System.out.println();
+        });
+
     // Closing the workbook
     workbook.close();
   }
